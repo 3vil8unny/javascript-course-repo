@@ -22,6 +22,30 @@
     </form>
     <div id="result">
     </div>
-    
+    <br>
+    <br>
+
+    <div id="clock">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+
+    var offset = 0
+        function validateForm() {
+            var radioButtons = document.getElementsByName("timezone");
+            var output = (radioButtons[0].value);
+
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked == true) {
+                    output = (radioButtons[i].value);
+                    document.getElementById("result").innerHTML = output;
+                  
+                }
+            }
+        }
+    </script>
 </body>
 </html>
