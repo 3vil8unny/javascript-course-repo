@@ -8,6 +8,7 @@
     <title>"Hello World!"</title>
 </head>
 <body>
+
     <form>
         <p>Select Timezone:</p><br>
         <input type="radio" name="timezone" value="est" id="est"> <label for="est"> Eastern Standard Time </label><br>
@@ -22,6 +23,7 @@
         <br>
     </form>
     <div id="result">
+        
     </div>
     <br>
     <br>
@@ -33,16 +35,17 @@
 
 
     <script type="text/javascript">
-
+    
     var offset = 0
         function validateForm() {
             var radioButtons = document.getElementsByName("timezone");
             var output = (radioButtons[0].value);
-
+            
             for (var i = 0; i < radioButtons.length; i++) {
+                
                 if (radioButtons[i].checked == true) {
                     output = (radioButtons[i].value);
-                    document.getElementById("result").innerHTML = output;
+                    //document.getElementById("result").innerHTML = output;//#endregion
                     switch (output) {
                 case "est":
     	        offset = -4;
@@ -64,13 +67,17 @@
     	        break;
                 default:
     	        offset = 0;
-    	        break  
-                digitalClock();
-                    }
-                  
+    	        break;
                 }
+                
+                }
+            
+                 
             }
-            function digitalClock() {
+        
+            
+        }
+        function digitalClock() {
             var today = new Date();
             var hour = today.getHours() + offset;
             var minute = ('0' + today.getMinutes()).slice(-2);
@@ -80,9 +87,10 @@
             setTimeout(() => {
                 digitalClock();
             }, 1000);
-        }
+        
+    }
         digitalClock();
-        }
+        
     </script>
 </body>
 </html>
