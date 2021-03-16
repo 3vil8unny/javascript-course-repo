@@ -45,6 +45,18 @@
                   
                 }
             }
+            function digitalClock() {
+            var today = new Date();
+            var hour = today.getHours() + offset;
+            var minute = ('0' + today.getMinutes()).slice(-2);
+            var second = ('0' + today.getSeconds()).slice(-2);
+            var time = hour + ":" + minute + ":" + second;
+            document.getElementById("clock").innerHTML = time;
+            setTimeout(() => {
+                digitalClock();
+            }, 1000);
+        }
+        digitalClock();
         }
     </script>
 </body>
